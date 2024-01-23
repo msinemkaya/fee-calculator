@@ -1,9 +1,11 @@
-import { Operation } from '../contracts'
-import { Transaction } from '../types'
+import { Operation, Person } from '../contracts';
+import { Transaction } from '../types';
 
 export class CashOut implements Operation {
-  getCommissionFee(transaction : Transaction) : number {
-    return 0
+  constructor(private userType : Person) {
   }
 
+  getCommissionFee(transaction : Transaction) : number {
+    return this.userType.calculateFee(transaction);
+  }
 }
