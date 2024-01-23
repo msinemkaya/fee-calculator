@@ -7,7 +7,7 @@ export type Transaction = {
     amount: number,
     currency: string
   }
-}
+};
 
-export type TransactionUser = "natural" | "juridical"
-export type TransactionType = 'cash_in' | "cash_out"
+export type TransactionUser = 'natural' | 'juridical';
+export type TransactionType = 'cash_in' | 'cash_out';
