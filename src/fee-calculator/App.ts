@@ -1,7 +1,6 @@
 import * as path from 'path';
 import { TransactionReader } from './contracts';
 import { Calculator } from './Calculator';
-import { Transaction } from './types';
 import JsonReader from './readers/JsonReader';
 import OperationManager from './operations/OperationManager';
 import OperationFactory from './operations/OperationFactory';
@@ -13,10 +12,12 @@ class App {
     private readonly operationManager : OperationManager,
   ) {}
 
-  run(callback : (transaction : Transaction) => void) {
+  run(callback : (fee : string) => void) {
     this.reader.getTransactions().forEach((transaction) => {
-      callback(transaction);
-      this.calculator.calculate(transaction, this.operationManager.getOperation(transaction));
+      if (transaction.type === 'cash_in') {
+        const fee = this.calculator.calculateFee(transaction, this.operationManager.getOperation(transaction));
+        callback(fee);
+      }
     });
   }
 }

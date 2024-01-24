@@ -2,7 +2,9 @@ import { Transaction } from './types';
 import { Operation } from './contracts';
 
 export class Calculator {
-  calculate(transaction : Transaction, operation : Operation) {
-    return operation.getCommissionFee(transaction);
+  calculateFee(transaction : Transaction, operation : Operation) : string {
+    const baseFee = operation.getCommissionFee(transaction);
+    const roundedFee = Math.ceil(baseFee * 100) / 100;
+    return roundedFee.toFixed(2);
   }
 }
