@@ -8,7 +8,7 @@ export default class WeeklyTransactionChecker {
 
   getWeeklyHistory(transaction : Transaction) : Transaction[] {
     return this.transactionStore.get(transaction.user_id)
-      .filter((data) => moment(data.date).startOf('isoWeek').week() === moment(transaction.date).startOf('isoWeek').week());
+      .filter((data) => moment(data.date).isoWeek() === moment(transaction.date).isoWeek());
   }
 
   addToHistory(transaction : Transaction) {
