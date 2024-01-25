@@ -1,5 +1,6 @@
 import { Transaction } from '../types';
 
 export interface Person {
-  calculateFee(transaction : Transaction) : number
+  getAmountToBeProcessed(transaction : Transaction) : number
+  getProcessedFee(calculatedAmount : number, percentage : number) : number
 }
