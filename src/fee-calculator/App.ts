@@ -14,10 +14,8 @@ class App {
 
   run(callback : (fee : string) => void) {
     this.reader.getTransactions().forEach((transaction) => {
-      if (transaction.type === 'cash_in') {
-        const fee = this.calculator.calculateFee(transaction, this.operationManager.getOperation(transaction));
-        callback(fee);
-      }
+      const fee = this.calculator.calculateFee(transaction, this.operationManager.getOperation(transaction));
+      callback(fee);
     });
   }
 }
