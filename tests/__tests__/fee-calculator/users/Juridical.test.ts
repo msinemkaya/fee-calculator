@@ -1,5 +1,5 @@
 import Juridical from '../../../../src/fee-calculator/users/Juridical'
-import { mockJuridicalTransactions } from '../../../__mocks__/juridicalTransactions'
+import { mockJuridicalTransactions } from '../../../__mocks__/fee-calculator/users/juridicalTransactions'
 describe('cash out transactions for juridical type users', () => {
   let juridicalInstance : Juridical;
 

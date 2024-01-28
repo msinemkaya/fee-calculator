@@ -1,5 +1,5 @@
-import { mockTransactions } from '../../__mocks__/transactions'
-import OperationMock from '../../__mocks__/contracts/Operation'
+import { mockTransactions } from '../../__mocks__/fee-calculator/transactions'
+import OperationMock from '../../__mocks__/fee-calculator/contracts/Operation'
 import { Calculator } from '../../../src/fee-calculator/Calculator'
 import { Operation } from '../../../src/fee-calculator/contracts'
 

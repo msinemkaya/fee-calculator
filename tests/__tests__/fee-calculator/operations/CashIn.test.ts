@@ -1,5 +1,5 @@
 import { CashIn } from '../../../../src/fee-calculator/operations'
-import { mockCashInTransactions } from '../../../__mocks__/cashInTransactions'
+import { mockCashInTransactions } from '../../../__mocks__/fee-calculator/operations/cashInTransactions'
 
 describe('cash in transactions', () => {
   let CashInInstance : CashIn;

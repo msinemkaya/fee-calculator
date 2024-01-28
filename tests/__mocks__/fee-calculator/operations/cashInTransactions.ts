@@ -1,4 +1,4 @@
-import { Transaction } from '../../src/fee-calculator/types'
+import { Transaction } from '../../../../src/fee-calculator/types'
 
 export const mockCashInTransactions = [
   {

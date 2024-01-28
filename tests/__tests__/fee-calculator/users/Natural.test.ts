@@ -1,6 +1,6 @@
 import Natural from '../../../../src/fee-calculator/users/Natural'
-import MockWeeklyTransactionChecker from '../../../__mocks__/WeeklyTransactionChecker'
-import { mockNaturalTransactions } from '../../../__mocks__/naturalTransactions'
+import MockWeeklyTransactionChecker from '../../../__mocks__/fee-calculator/utils/WeeklyTransactionChecker'
+import { mockNaturalTransactions } from '../../../__mocks__/fee-calculator/users/naturalTransactions'
 
 jest.mock('../../../__mocks__/WeeklyTransactionChecker')
 describe('cash out transactions for natural type users', () => {

@@ -1,6 +1,6 @@
 import { CashOut } from '../../../../src/fee-calculator/operations'
-import PersonMock from '../../../__mocks__/contracts/Person'
-import { mockCashOutTransactions } from '../../../__mocks__/cashOutTransactions'
+import PersonMock from '../../../__mocks__/fee-calculator/contracts/Person'
+import { mockCashOutTransactions } from '../../../__mocks__/fee-calculator/operations/cashOutTransactions'
 import { Person } from '../../../../src/fee-calculator/contracts'
 
 jest.mock('../../../__mocks__/contracts/Person')
