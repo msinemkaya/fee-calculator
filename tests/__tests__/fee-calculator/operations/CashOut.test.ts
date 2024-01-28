@@ -20,6 +20,7 @@ describe('cash out transactions', () => {
     const received = CashOutInstance.getCommissionFee(transaction)
 
     expect(mockPerson.getProcessedFee).toHaveBeenCalledTimes(1)
+    expect(mockPerson.getAmountToBeProcessed).toHaveBeenCalledTimes(1)
     expect(received).toBeCloseTo(expected)
   })
 })
