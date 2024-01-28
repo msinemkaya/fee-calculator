@@ -5,17 +5,17 @@ import { mockWeeklyTransactions } from '../../../__mocks__/fee-calculator/utils/
 
 jest.mock('../../../__mocks__/fee-calculator/TransactionStore')
 describe('weekly transactions', () => {
-  let checkerInstance: WeeklyTransactionChecker
+  let CheckerInstance: WeeklyTransactionChecker
   let mockStore: jest.Mocked<TransactionStore>
 
   beforeEach(() => {
     mockStore = TransactionStoreMock()
-    checkerInstance = new WeeklyTransactionChecker(mockStore)
+    CheckerInstance = new WeeklyTransactionChecker(mockStore)
   })
 
   it.each(mockWeeklyTransactions)('should return users weekly transaction history correctly', ({ transaction, shouldReturn, expected}) => {
     mockStore.get.mockReturnValue(shouldReturn)
-    const received = checkerInstance.getWeeklyHistory(transaction)
+    const received = CheckerInstance.getWeeklyHistory(transaction)
 
     expect(mockStore.get).toHaveBeenCalledTimes(1)
     expect(received).toEqual(expected)
