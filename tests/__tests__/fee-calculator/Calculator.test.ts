@@ -3,7 +3,7 @@ import OperationMock from '../../__mocks__/fee-calculator/contracts/Operation'
 import { Calculator } from '../../../src/fee-calculator/Calculator'
 import { Operation } from '../../../src/fee-calculator/contracts'
 
-jest.mock('../../__mocks__/contracts/Operation')
+jest.mock('../../__mocks__/fee-calculator/contracts/Operation')
 describe('calculator for all transactions', () => {
   let calculatorInstance: Calculator
   let mockOperation: jest.Mocked<Operation>

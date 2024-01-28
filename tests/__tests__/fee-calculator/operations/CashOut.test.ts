@@ -3,7 +3,7 @@ import PersonMock from '../../../__mocks__/fee-calculator/contracts/Person'
 import { mockCashOutTransactions } from '../../../__mocks__/fee-calculator/operations/cashOutTransactions'
 import { Person } from '../../../../src/fee-calculator/contracts'
 
-jest.mock('../../../__mocks__/contracts/Person')
+jest.mock('../../../__mocks__/fee-calculator/contracts/Person')
 describe('cash out transactions', () => {
 
   let CashOutInstance: CashOut;
