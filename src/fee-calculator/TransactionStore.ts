@@ -1,7 +1,8 @@
 import { Transaction } from './types';
 
 export class TransactionStore {
-  private data : Map<number, Transaction[]> = new Map();
+  constructor(private data : Map<number, Transaction[]>) {
+  }
 
   get(userId : number) : Transaction[] {
     return this.data.get(userId) || [];
@@ -14,4 +15,4 @@ export class TransactionStore {
   }
 }
 
-export default new TransactionStore();
+export default new TransactionStore(new Map());
