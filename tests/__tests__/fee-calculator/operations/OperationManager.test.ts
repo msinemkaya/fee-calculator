@@ -1,7 +1,7 @@
 import FactoryMock from '../../../__mocks__/fee-calculator/operations/OperationFactory';
 import OperationManager from '../../../../src/fee-calculator/operations/OperationManager';
 import OperationFactory from '../../../../src/fee-calculator/operations/OperationFactory';
-import { Transaction } from '../../../../src/fee-calculator/types';
+import { cashInTransaction, cashOutTransaction, unknownTransaction } from '../../../__mocks__/fee-calculator/operations/managerTransactions';
 
 jest.mock('../../../__mocks__/fee-calculator/operations/OperationFactory');
 jest.mock('../../../../src/fee-calculator/operations/CashIn');
@@ -9,10 +9,6 @@ jest.mock('../../../../src/fee-calculator/operations/CashIn');
 describe('operation manager', () => {
   let ManagerInstance: OperationManager;
   let mockFactory: jest.Mocked<OperationFactory>;
-
-  const cashInTransaction = { type: 'cash_in' } as Transaction;
-  const cashOutTransaction = { type: 'cash_out' } as Transaction;
-  const unknownTransaction = { type: 'gibberish' } as unknown as Transaction;
 
   beforeEach(() => {
     mockFactory = FactoryMock();

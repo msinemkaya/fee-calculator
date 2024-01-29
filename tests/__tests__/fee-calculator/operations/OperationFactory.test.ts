@@ -1,9 +1,9 @@
 import OperationFactory from '../../../../src/fee-calculator/operations/OperationFactory';
 import { CashIn, CashOut } from '../../../../src/fee-calculator/operations';
-import { Transaction } from '../../../../src/fee-calculator/types';
 import Juridical from '../../../../src/fee-calculator/users/Juridical';
 import Natural from '../../../../src/fee-calculator/users/Natural';
 import WeeklyTransactionChecker from '../../../../src/fee-calculator/utils/WeeklyTransactionChecker';
+import { juridicalTransaction, naturalTransaction, unknownTransaction } from '../../../__mocks__/fee-calculator/operations/factoryTransactions';
 
 jest.mock('../../../../src/fee-calculator/operations/CashOut');
 jest.mock('../../../../src/fee-calculator/users/Natural');
@@ -12,10 +12,6 @@ describe('operation factory', () => {
   let FactoryInstance: OperationFactory;
   const MockedCashOut = CashOut;
   const MockedNatural = Natural;
-
-  const juridicalTransaction : Transaction = { user_type: 'juridical' } as Transaction;
-  const naturalTransaction : Transaction = { user_type: 'natural' } as Transaction;
-  const unknownTransaction : Transaction = { user_type: 'gibberish' } as unknown as Transaction;
 
   beforeEach(() => {
     FactoryInstance = new OperationFactory();

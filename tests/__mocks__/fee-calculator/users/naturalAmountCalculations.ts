@@ -1,6 +1,6 @@
 import { Transaction } from '../../../../src/fee-calculator/types';
 
-export const mockNaturalTransactions = [
+export const naturalAmountCalculations = [
   {
     transaction: {
       date: '2016-01-06',

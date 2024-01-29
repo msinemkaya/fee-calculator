@@ -1,6 +1,6 @@
 import { Transaction } from '../../../../src/fee-calculator/types';
 
-export const mockJuridicalTransactions : Transaction[] = [
+export const juridicalAmountCalculations : Transaction[] = [
   {
     operation:
       {
