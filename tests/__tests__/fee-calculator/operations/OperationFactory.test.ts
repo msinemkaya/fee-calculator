@@ -13,6 +13,11 @@ describe('operation factory', () => {
   const MockedCashOut = CashOut
   const MockedNatural = Natural
 
+  const juridicalTransaction : Transaction = {"user_type": 'juridical'} as Transaction
+  const naturalTransaction : Transaction = {"user_type": 'natural'} as Transaction
+  const unknownTransaction : Transaction = { 'user_type': 'gibberish' } as unknown as Transaction
+
+
   beforeEach(() => {
     FactoryInstance = new OperationFactory()
   })
@@ -26,16 +31,14 @@ describe('operation factory', () => {
   describe('CashOut instance with given user type', () => {
 
     it('should return new instance of CashOut with Juridical instance', () => {
-      const transaction : Transaction = {"user_type": 'juridical'} as Transaction
-      const received = FactoryInstance.getCashOut(transaction)
+      const received = FactoryInstance.getCashOut(juridicalTransaction)
 
       expect(received).toBeInstanceOf(CashOut)
       expect(MockedCashOut).toHaveBeenCalledWith(expect.any(Juridical), 0.3);
     })
 
     it('should return new instance of CashOut with Natural instance', () => {
-      const transaction : Transaction = {"user_type": 'natural'} as Transaction
-      const received = FactoryInstance.getCashOut(transaction)
+      const received = FactoryInstance.getCashOut(naturalTransaction)
 
       expect(received).toBeInstanceOf(CashOut)
       expect(MockedCashOut).toHaveBeenCalledWith(expect.any(Natural), 0.3);
@@ -43,9 +46,8 @@ describe('operation factory', () => {
     })
 
     it('should throw error', () => {
-      const transaction : Transaction = { 'user_type': 'gibberish' } as unknown as Transaction
       expect(() => {
-        FactoryInstance.getCashOut(transaction)
+        FactoryInstance.getCashOut(unknownTransaction)
       }).toThrowError('this user type does not exist')
     })
   })
