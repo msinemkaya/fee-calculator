@@ -20,4 +20,9 @@ describe('weekly transactions', () => {
     expect(mockStore.get).toHaveBeenCalledTimes(1)
     expect(received).toEqual(expected)
   })
+
+  it.each(mockWeeklyTransactions)('should add transaction to transaction history correctly', ({transaction}) => {
+    CheckerInstance.addToHistory(transaction)
+    expect(mockStore.set).toHaveBeenCalledTimes(1)
+  })
 })
