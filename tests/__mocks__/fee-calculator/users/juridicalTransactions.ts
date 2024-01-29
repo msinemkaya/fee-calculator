@@ -1,25 +1,25 @@
-import { Transaction } from '../../../../src/fee-calculator/types'
+import { Transaction } from '../../../../src/fee-calculator/types';
 
 export const mockJuridicalTransactions : Transaction[] = [
   {
-    "operation":
+    operation:
       {
-        "amount": 52.05,
-        "currency": "EUR"
-      }
+        amount: 52.05,
+        currency: 'EUR',
+      },
   } as Transaction,
   {
-    "operation":
+    operation:
       {
-        "amount": 12000,
-        "currency": "EUR"
-      }
+        amount: 12000,
+        currency: 'EUR',
+      },
   } as Transaction,
   {
-    "operation":
+    operation:
       {
-        "amount": 1980.73,
-        "currency": "EUR"
-      }
+        amount: 1980.73,
+        currency: 'EUR',
+      },
   } as Transaction,
-]
+];

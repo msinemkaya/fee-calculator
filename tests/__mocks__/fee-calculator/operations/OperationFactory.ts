@@ -1,4 +1,4 @@
-jest.mock('../../../../src/fee-calculator/operations/CashOut')
+jest.mock('../../../../src/fee-calculator/operations/CashOut');
 
 export default jest.fn().mockImplementation(() => (
   {

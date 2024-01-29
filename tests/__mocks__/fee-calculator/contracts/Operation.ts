@@ -1,5 +1,5 @@
 export default jest.fn().mockImplementation(() => (
   {
-    getCommissionFee: jest.fn()
+    getCommissionFee: jest.fn(),
   }
 ));
