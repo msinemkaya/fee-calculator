@@ -8,7 +8,7 @@ import WeeklyTransactionChecker from '../../../../src/fee-calculator/utils/Weekl
 jest.mock('../../../../src/fee-calculator/operations/CashOut')
 jest.mock('../../../../src/fee-calculator/users/Natural')
 
-describe('transaction store', () => {
+describe('operation factory', () => {
   let FactoryInstance: OperationFactory
   const MockedCashOut = CashOut
   const MockedNatural = Natural
@@ -43,11 +43,10 @@ describe('transaction store', () => {
     })
 
     it('should throw error', () => {
-          const transaction : Transaction = { 'user_type': 'gibberish' } as unknown as Transaction
-
-          expect(() => {
-            FactoryInstance.getCashOut(transaction)
-          }).toThrowError('this user type does not exist')
+      const transaction : Transaction = { 'user_type': 'gibberish' } as unknown as Transaction
+      expect(() => {
+        FactoryInstance.getCashOut(transaction)
+      }).toThrowError('this user type does not exist')
     })
   })
 })
