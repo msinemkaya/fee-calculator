@@ -1,4 +1,4 @@
-import { mockTransactions } from '../../__mocks__/fee-calculator/transactions'
+import { mockCalculatedTransactions } from '../../__mocks__/fee-calculator/calculatedTransactions'
 import OperationMock from '../../__mocks__/fee-calculator/contracts/Operation'
 import { Calculator } from '../../../src/fee-calculator/Calculator'
 import { Operation } from '../../../src/fee-calculator/contracts'
@@ -13,7 +13,7 @@ describe('calculator for all transactions', () => {
     CalculatorInstance = new Calculator()
   })
 
-  it.each(mockTransactions)('should return rounded fee amount correctly that comes from operations', ({ transaction, expected, shouldReturn}) => {
+  it.each(mockCalculatedTransactions)('should return rounded fee amount correctly that comes from operations', ({ transaction, expected, shouldReturn}) => {
     mockOperation.getCommissionFee.mockReturnValue(shouldReturn)
     const received = CalculatorInstance.calculateFee(transaction, mockOperation)
 
