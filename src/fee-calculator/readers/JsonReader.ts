@@ -12,8 +12,7 @@ export default class JsonReader implements TransactionReader {
       const data = fs.readFileSync(this.filePath, 'utf-8');
       parsedData = JSON.parse(data.toString());
     } catch (e) {
-      throw e;
-      process.exit(1);
+      throw new Error('file could not be read or does not exist');
     }
 
     return parsedData;
