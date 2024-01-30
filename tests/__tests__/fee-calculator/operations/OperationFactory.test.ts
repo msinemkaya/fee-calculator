@@ -1,5 +1,6 @@
 import OperationFactory from '../../../../src/fee-calculator/operations/OperationFactory';
-import { CashIn, CashOut } from '../../../../src/fee-calculator/operations';
+import CashIn from '../../../../src/fee-calculator/operations/CashIn';
+import CashOut from '../../../../src/fee-calculator/operations/CashOut';
 import Juridical from '../../../../src/fee-calculator/users/Juridical';
 import Natural from '../../../../src/fee-calculator/users/Natural';
 import WeeklyTransactionChecker from '../../../../src/fee-calculator/utils/WeeklyTransactionChecker';
@@ -36,7 +37,7 @@ describe('operation factory', () => {
 
       expect(received).toBeInstanceOf(CashOut);
       expect(MockedCashOut).toHaveBeenCalledWith(expect.any(Natural), 0.3);
-      expect(MockedNatural).toHaveBeenCalledWith(expect.any(WeeklyTransactionChecker));
+      expect(MockedNatural).toHaveBeenCalledWith(expect.any(WeeklyTransactionChecker), 1000);
     });
 
     it('should throw error', () => {

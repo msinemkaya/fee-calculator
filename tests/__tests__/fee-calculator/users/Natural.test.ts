@@ -1,7 +1,8 @@
 import Natural from '../../../../src/fee-calculator/users/Natural';
+import config from '../../../../src/fee-calculator/config';
 import MockWeeklyTransactionChecker from '../../../__mocks__/fee-calculator/utils/WeeklyTransactionChecker';
-import { naturalAmountCalculations } from '../../../__mocks__/fee-calculator/users/naturalAmountCalculations';
-import { naturalFeeCalculations } from '../../../__mocks__/fee-calculator/users/naturalFeeCalculations';
+import naturalAmountCalculations from '../../../__mocks__/fee-calculator/users/naturalAmountCalculations';
+import naturalFeeCalculations from '../../../__mocks__/fee-calculator/users/naturalFeeCalculations';
 
 jest.mock('../../../__mocks__/fee-calculator/utils/WeeklyTransactionChecker');
 describe('cash out transactions for natural type users', () => {
@@ -9,7 +10,7 @@ describe('cash out transactions for natural type users', () => {
   const mockChecker = MockWeeklyTransactionChecker();
 
   beforeEach(() => {
-    naturalInstance = new Natural(mockChecker);
+    naturalInstance = new Natural(mockChecker, config.NATURAL_WEEK_LIMIT);
   });
 
   it.each(naturalFeeCalculations)('should return calculated fee with given amount and percentage ', ({ amount, percentage, expected }) => {

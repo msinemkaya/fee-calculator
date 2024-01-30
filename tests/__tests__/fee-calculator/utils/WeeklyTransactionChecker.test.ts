@@ -1,7 +1,7 @@
 import TransactionStoreMock from '../../../__mocks__/fee-calculator/TransactionStore';
 import WeeklyTransactionChecker from '../../../../src/fee-calculator/utils/WeeklyTransactionChecker';
 import { TransactionStore } from '../../../../src/fee-calculator/TransactionStore';
-import { mockWeeklyTransactions } from '../../../__mocks__/fee-calculator/utils/WeeklyTransactions';
+import weeklyTransactions from '../../../__mocks__/fee-calculator/utils/WeeklyTransactions';
 
 jest.mock('../../../__mocks__/fee-calculator/TransactionStore');
 describe('weekly transactions', () => {
@@ -13,7 +13,7 @@ describe('weekly transactions', () => {
     CheckerInstance = new WeeklyTransactionChecker(mockStore);
   });
 
-  it.each(mockWeeklyTransactions)('should return users weekly transaction history correctly', ({ transaction, shouldReturn, expected }) => {
+  it.each(weeklyTransactions)('should return users weekly transaction history correctly', ({ transaction, shouldReturn, expected }) => {
     mockStore.get.mockReturnValue(shouldReturn);
     const received = CheckerInstance.getWeeklyHistory(transaction);
 
@@ -21,7 +21,7 @@ describe('weekly transactions', () => {
     expect(received).toEqual(expected);
   });
 
-  it.each(mockWeeklyTransactions)('should add transaction to transaction history correctly', ({ transaction }) => {
+  it.each(weeklyTransactions)('should add transaction to transaction history correctly', ({ transaction }) => {
     CheckerInstance.addToHistory(transaction);
     expect(mockStore.set).toHaveBeenCalledTimes(1);
   });

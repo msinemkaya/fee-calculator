@@ -20,7 +20,7 @@ describe('Json reader', () => {
 
   it('should throw error', () => {
     jest.spyOn(fs, 'readFileSync').mockImplementation(() => {
-      throw new Error('file could not be read');
+      throw new Error('file could not be read or does not exist');
     });
 
     expect(() => {

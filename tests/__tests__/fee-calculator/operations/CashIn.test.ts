@@ -1,5 +1,5 @@
-import { CashIn } from '../../../../src/fee-calculator/operations';
-import { mockCashInTransactions } from '../../../__mocks__/fee-calculator/operations/cashInTransactions';
+import CashIn from '../../../../src/fee-calculator/operations/CashIn';
+import cashInTransactions from '../../../__mocks__/fee-calculator/operations/cashInTransactions';
 
 describe('cash in transactions', () => {
   let CashInInstance : CashIn;
@@ -8,7 +8,7 @@ describe('cash in transactions', () => {
     CashInInstance = new CashIn(0.03, 5);
   });
 
-  it.each(mockCashInTransactions)('should return calculated commission fee correctly', ({ transaction, expected }) => {
+  it.each(cashInTransactions)('should return calculated commission fee correctly', ({ transaction, expected }) => {
     const result = CashInInstance.getCommissionFee(transaction);
     expect(result).toBeCloseTo(expected);
   });
