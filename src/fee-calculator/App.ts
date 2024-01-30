@@ -14,16 +14,19 @@ class App {
 
   run(callback : (fee : string) => void) {
     this.reader.getTransactions().forEach((transaction) => {
-      const fee = this.calculator.calculateFee(transaction, this.operationManager.getOperation(transaction));
+      const fee = this.calculator.calculateFee(
+        transaction,
+        this.operationManager.getOperation(transaction),
+      );
       callback(fee);
     });
   }
 }
 
-export function createApp(dirname : string) {
+export const createApp = (dirname : string) => {
   const reader = new JsonReader(path.join(dirname, 'input.json'));
   const calculator = new Calculator();
   const operationFactory = new OperationFactory();
   const operationManager = new OperationManager(operationFactory);
   return new App(reader, calculator, operationManager);
-}
+};
