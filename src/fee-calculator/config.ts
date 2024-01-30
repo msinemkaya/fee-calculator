@@ -1,4 +1,4 @@
-import { EnvConfig } from './types/EnvConfig';
+import { EnvConfig } from './types';
 
 const config : EnvConfig = {
   CASH_IN_PERCENTAGE:
