@@ -1,6 +1,6 @@
-import { CashIn } from './CashIn';
+import CashIn from './CashIn';
 import { Transaction } from '../types';
-import { CashOut } from './CashOut';
+import CashOut from './CashOut';
 import WeeklyTransactionChecker from '../utils/WeeklyTransactionChecker';
 import Juridical from '../users/Juridical';
 import Natural from '../users/Natural';
