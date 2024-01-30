@@ -8,7 +8,10 @@
     "test": "jest --coverage --verbose",
     "test:watch": "jest --watch",
     "build": "tsc",
-    "start:prod": "node dist/app.js"
+    "start:prod": "node dist/app.js",
+    "lint": "npx eslint .",
+    "lint --fix": "npx eslint . --fix"
+
   },
   "keywords": [],
   "author": "",
