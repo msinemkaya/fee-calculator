@@ -1,6 +1,6 @@
 import { Transaction } from '../../../src/fee-calculator/types';
 
-export const mockGetMapTransactions = [
+const getMapTransactions = [
   {
     userId: 1,
     expected: [
@@ -13,3 +13,5 @@ export const mockGetMapTransactions = [
     expected: [],
   },
 ];
+
+export default getMapTransactions;

@@ -1,6 +1,6 @@
 import { Transaction } from '../../../../src/fee-calculator/types';
 
-export const juridicalAmountCalculations : Transaction[] = [
+const juridicalAmountCalculations : Transaction[] = [
   {
     operation:
       {
@@ -23,3 +23,5 @@ export const juridicalAmountCalculations : Transaction[] = [
       },
   } as Transaction,
 ];
+
+export default juridicalAmountCalculations;

@@ -1,6 +1,6 @@
 import { Transaction } from '../../../../src/fee-calculator/types';
 
-export const naturalAmountCalculations = [
+const naturalAmountCalculations = [
   {
     transaction: {
       date: '2016-01-06',
@@ -43,3 +43,5 @@ export const naturalAmountCalculations = [
     expected: 0,
   },
 ];
+
+export default naturalAmountCalculations;

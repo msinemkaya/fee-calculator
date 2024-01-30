@@ -1,6 +1,6 @@
 import { Transaction } from '../../../../src/fee-calculator/types';
 
-export const mockCashOutTransactions = [
+const cashOutTransactions = [
   {
     transaction: {
       user_type: 'natural',
@@ -46,3 +46,5 @@ export const mockCashOutTransactions = [
     expected: 0.20,
   },
 ];
+
+export default cashOutTransactions;

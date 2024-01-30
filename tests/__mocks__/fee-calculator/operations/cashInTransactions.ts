@@ -1,6 +1,6 @@
 import { Transaction } from '../../../../src/fee-calculator/types';
 
-export const mockCashInTransactions = [
+const cashInTransactions = [
   {
     transaction: {
       operation: {
@@ -29,3 +29,5 @@ export const mockCashInTransactions = [
     expected: 0.20,
   },
 ];
+
+export default cashInTransactions;

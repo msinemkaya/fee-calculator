@@ -1,6 +1,6 @@
 import { Transaction } from '../../../src/fee-calculator/types';
 
-export const transactionMap = new Map([
+const transactionMap = new Map([
   [
     1,
     [
@@ -15,3 +15,5 @@ export const transactionMap = new Map([
     ],
   ],
 ]);
+
+export default transactionMap;

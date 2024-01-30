@@ -1,6 +1,6 @@
 import { Transaction } from '../../../src/fee-calculator/types';
 
-export const mockSetMapTransactions = [
+const setMapTransactions = [
   {
     transaction: {
       user_id: 4,
@@ -27,5 +27,6 @@ export const mockSetMapTransactions = [
       ],
     ],
   },
-
 ];
+
+export default setMapTransactions;

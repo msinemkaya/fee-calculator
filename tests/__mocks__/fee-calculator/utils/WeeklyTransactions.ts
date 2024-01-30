@@ -1,6 +1,6 @@
 import { Transaction } from '../../../../src/fee-calculator/types';
 
-export const mockWeeklyTransactions = [
+const weeklyTransactions = [
   {
     transaction: {
       date: '2016-01-05',
@@ -50,3 +50,5 @@ export const mockWeeklyTransactions = [
     ],
   },
 ];
+
+export default weeklyTransactions;

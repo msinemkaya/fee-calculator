@@ -1,6 +1,6 @@
 import { Transaction } from '../../../src/fee-calculator/types';
 
-export const mockCalculatedTransactions = [
+const calculatedTransactions = [
   {
     transaction: {
       date: '2016-01-05',
@@ -58,3 +58,5 @@ export const mockCalculatedTransactions = [
     expected: '0.02',
   },
 ];
+
+export default calculatedTransactions;
