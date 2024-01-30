@@ -1,7 +1,7 @@
 import { Operation } from '../contracts';
 import { Transaction } from '../types';
 
-export class CashIn implements Operation {
+export default class CashIn implements Operation {
   constructor(private readonly percentage : number, private readonly max : number) {
   }
 

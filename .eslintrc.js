@@ -1,18 +1,19 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
+  env: {
+    browser: true,
+    es2021: true,
   },
-  'extends': [
+  extends: [
     'airbnb-base',
     'airbnb-typescript/base',
   ],
-  'parser': '@typescript-eslint/parser',
-  'parserOptions': {
-      'project': './tsconfig.json'
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json',
   },
-  'plugins': [
+  plugins: [
     '@typescript-eslint',
   ],
-  'rules': {},
-}
+  rules: {},
+  ignorePatterns: ['dist/**/*', 'coverage/**/*'],
+};

@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
-  "include": ["src/**/*", "app.ts", "tests/**/*"],
+  "include": ["src/**/*", "app.ts", "tests/**/*", ".eslintrc.js"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "allowJs": true,
