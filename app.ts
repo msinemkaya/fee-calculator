@@ -1,11 +1,7 @@
-import * as path from 'path';
 import { createApp } from './src/fee-calculator/App';
+import directoryName from './src/fee-calculator/helpers/directoryHelper';
 
-let dirname = __dirname;
-
-if (dirname.includes('dist')) {
-  dirname = path.join(dirname, '../');
-}
+const dirname = directoryName(__dirname);
 createApp(dirname).run((fee) => {
   console.log(fee);
 });
