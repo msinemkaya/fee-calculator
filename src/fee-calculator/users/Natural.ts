@@ -3,8 +3,10 @@ import { Transaction } from '../types';
 import WeeklyTransactionChecker from '../utils/WeeklyTransactionChecker';
 
 export default class Natural implements Person {
-  constructor(private weeklyTransactionChecker : WeeklyTransactionChecker) {
-  }
+  constructor(
+    private weeklyTransactionChecker : WeeklyTransactionChecker,
+    private readonly weekLimit : number,
+  ) {}
 
   getAmountToBeProcessed(transaction : Transaction) : number {
     const { amount } = transaction.operation;
@@ -13,7 +15,7 @@ export default class Natural implements Person {
     const totalAmount = amountHistory + amount;
 
     this.weeklyTransactionChecker.addToHistory(transaction);
-    if (amountHistory <= 1000) return Math.max(0, totalAmount - 1000);
+    if (amountHistory <= this.weekLimit) return Math.max(0, totalAmount - this.weekLimit);
     return amount;
   }
 
